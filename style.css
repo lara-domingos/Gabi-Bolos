@@ -1,0 +1,813 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f4ecef 0%, #e0d8dc 100%); /* Creme bem suave com fundo rosado */
+    color: #070707;
+    flex-direction: column;
+    display: flex;
+}
+
+.Menu {
+    border-radius: 50px;
+    margin: 20px auto; 
+    max-width: 1000px; 
+    width: 95%; 
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 12px 30px;
+    background-color: rgba(253, 240, 246, 0.85); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 15px 35px rgba(98, 41, 45, 0.2);
+}
+
+
+.logo {
+    flex: 1; /* Retorna a proporção correta para equilibrar o layout */
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    height: 50px; 
+}
+
+.cupcake {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    transform: translateY(-2px); 
+}
+
+.nav {
+    flex: 2; /* Ocupa o dobro de espaço para caber todos os links confortavelmente */
+    display: flex;
+    justify-content: center; /* Centraliza o texto no meio da pílula */
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #331E17;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #cb787f;
+}
+
+.pedido {
+    flex: 1; /* Ocupa 1 parte do espaço (equilibra com a logo) */
+    display: flex;
+    justify-content: flex-end; /* Empurra o botão e o ícone para o canto direito */
+    align-items: center;
+    gap: 15px;
+}
+
+/*#C98B8D;*/
+.botao2 {
+    background-color: #402828;
+    color: white;
+    padding: 12px 25px; /* O botão também precisa encolher para ficar proporcional */
+    border-radius: 50px;
+    border: none;
+    margin: 0;
+    align-self: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-size: 1rem; /* Fonte levemente menor */
+}
+
+.botao2:hover {
+    background-color: #d28a9a; 
+}
+
+main {
+/* Gradiente com transição mais natural e elegante */
+    background: linear-gradient(135deg, #f4ecf0 0%, #dfd2d6 50%, #fdf4f8 100%);
+    padding: 30px 60px 80px;
+    min-height: 90vh;          /* ocupa quase a tela toda, mas sem sobrar vazio */
+    display: flex;
+    align-items: center;       /* centraliza o conteúdo verticalmente no espaço disponível */
+}
+
+.conteudo-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.texto-principal {
+    flex: 1.1;              /* um pouco mais de espaço pro texto */
+    text-align: left;
+}
+
+.imagem-principal {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.imagem-principal img {
+    width: 76%;
+    max-width: 560px;     
+    border-radius: 20px;
+    display: block;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+h5 {
+    text-align: left;
+    margin-bottom: 15px;
+    color: #AF7269;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 50px;      /* bem maior */
+    margin-bottom: 20px;
+    color: #2f1b15;
+    text-align: left;
+    line-height: 1.15;
+}
+
+h2 span {
+    color: #843518;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+}
+
+p {
+    color: #1A1A1A;
+    text-align: left;
+    font-size: 20px;      /* maior */
+    line-height: 30px;
+    max-width: 480px;
+}
+
+/*botões do main*/
+.botoes {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.botoes button{
+    background-color: #a73c45;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 25px;
+    border: none;
+    margin: 0;
+    align-self: center;
+    font-size: 1.1rem;
+}
+
+.botao3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/*Vantagens de escolher Gabi bolos*/
+.titulo-secao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.linha {
+    width: 100px;
+    height: 2px;
+    background-color: #B85f66;
+    border-radius: 10px;
+}
+
+.bi-heart-fill{ /* icone do coracao*/
+    color: #96314a;
+    font-size: 16px;
+}
+
+.diferencial {
+    font-size: 44px;
+    text-align: center;
+    margin-bottom: 0px;
+    color: #2a1710;
+}
+
+.qualidade {
+    text-align: center;
+    margin: 0 auto 40px;
+    color: #1A1A1A;
+}
+
+/*Containers*/
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.producao {
+    background-color:#f7e9ee;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: left;
+    flex: 1;
+    min-width: 280px;
+    max-width: 380px;
+    border: none;
+    display: flex;
+    flex-direction: row;  /* Alterado de column para row */
+    align-items: center; /* Mantém o ícone alinhado ao topo. Se quiser centralizado, use 'center' */
+    gap: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Adicione esta linha! Coloquei 0.08 para garantir que ela apareça bem no fundo creme */
+}
+
+.producao h3 {
+    color: #2a1710;
+    margin-bottom: 0px;
+    font-size: 19px;
+    justify-content: center;
+}
+
+.producao p {
+    color: #1A1A1A;
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 100%;
+    justify-content: center;
+}
+
+.producao .icone {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #f6c9d4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.producao .icone img {
+    width: 65%;
+    height: 65%;
+    object-fit: contain;
+}
+
+.producao .texto {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.entrega-container {
+    background-color: #f4dce4;
+    border-radius: 10px; 
+    padding: 15px 30px; 
+    max-width: 1200px;
+    width: 100%;
+    margin: 40px auto 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.entrega-texto {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* É aqui que você controla o espaço exato entre o caminhãozinho e o texto */
+}
+
+.entrega {
+    color: #b80d38;
+    font-size: 15px;
+    margin: 0;
+    max-width: none; 
+}
+
+.entrega-texto i.bi-truck {
+    color: #96314a;
+    font-size: 24px; /* Aumentei um pouco para proporcionalidade, ajuste como preferir */
+}
+
+.divisor {
+    margin: 0 10px; /* Ajuste o valor para afastar ou aproximar o texto */
+}
+
+.entrega-texto i {
+    color: #96314a;
+    font-size: 24px; /* Ajuste o tamanho se precisar */
+}
+
+.entrega-texto a {
+    text-decoration: none;
+    display: flex; /* Mantém o alinhamento centralizado se o ícone bugar */
+}
+
+/* Transforma o botão num Grid para empilhar os ícones na mesma célula */
+.toggle-tema {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    display: grid; /* Mudança vital aqui */
+    place-items: center; /* Centraliza tudo no mesmo eixo */
+    cursor: pointer;
+    overflow: hidden; /* Evita que a rotação vaze o tamanho do botão */
+}
+
+.toggle-tema i {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 1.5rem;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+}
+
+/* ESTADO CLARO (Padrão) */
+.toggle-tema .icone-sol {
+    color: #331E17;
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.toggle-tema .icone-lua {
+    color: #e6dcd8; 
+    opacity: 0;
+    transform: rotate(-90deg); /* Lua fica deitada e invisível aguardando */
+    pointer-events: none;
+}
+
+/* ESTADO ESCURO (Quando html tem a classe .dark) */
+html.dark .toggle-tema .icone-sol {
+    opacity: 0;
+    transform: rotate(90deg); /* Sol gira para baixo e some */
+    pointer-events: none;
+}
+
+html.dark .toggle-tema .icone-lua {
+    opacity: 1;
+    transform: rotate(0deg); /* Lua gira para a posição normal e aparece */
+}
+
+/* =========================================
+   TEMA ESCURO (Sobrescritas)
+   ========================================= */
+html.dark body { background: linear-gradient(135deg, #150b0d 0%, #291d20 50%, #43373a 100%); color: #e6dcd8; }
+html.dark .Menu {
+    background-color: rgba(41, 29, 32, 0.85);box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+html.dark nav {color: rgb(186, 173, 173);}
+html.dark main { background: linear-gradient(135deg, hsl(345, 27%, 6%) 10%, #291d20 50%, #43373a 100%);}
+html.dark .texto-principal span {color:#bd694b}
+html.dark h2, html.dark .diferencial, html.dark .producao h3 { color: #f0e6e2; }
+html.dark .texto-principal p{color:rgb(186, 173, 173);}
+html.dark .qualidade{color:rgb(186, 173, 173);}
+html.dark .producao { background-color: #2a1b1e; border-color: #3d282c; }
+html.dark .entrega-container { background-color: #2a1b1e;}
+html.dark .texto p {color:rgb(186, 173, 173);}
+html.dark .entrega {color:#e993a0;}
+html.dark .entrega-texto i.bi-truck {color:#e993a0;}
+html.dark .entrega-texto i{color:#e993a0;}
+html.dark .nav a {color: rgb(186, 173, 173); }
+html.dark .nav :hover {color: #cb787f;}
+
+.toggle-tema .icone-sol {
+    color:#331E17;
+}
+/* Estado Padrão (Claro) */
+.logo-escura { 
+    display: none; 
+}
+
+/* Estado Escuro */
+html.dark .logo-clara { 
+    display: none; 
+}
+html.dark .logo-escura { 
+    display: block; 
+}
+
+/* GALERIA DE BOLOS PADRONIZADA */
+.galeria-bolos {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap; /* Permite quebrar linha no celular */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1400px;  
+    margin: 30px auto;
+}
+
+.bolos-card {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.imagem-bolo {
+    width: 360px; /* Largura padrão para desktop */
+    aspect-ratio: 1 / 1; /* Força o quadrado perfeito */
+    object-fit: cover; /* Corta a sobra e não distorce a foto */
+    border-radius: 40px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+/*Tabela de precos*/
+#tamanhos {
+    display: flex;
+    flex-direction: column; /* empilha: título primeiro, depois os cards */
+    align-items: center;    /* centraliza tudo horizontalmente */
+    max-width: 1400px;
+    margin: 10px auto 60px;
+    padding: 0 20px;
+}
+
+.tabelas-linha {
+    display: flex;
+    flex-direction: row;      /* os cards ficam um do lado do outro */
+    flex-wrap: nowrap;        /* nowrap = proibido quebrar linha, garante lado a lado */
+    align-items: stretch;     /* estica todos os cards pra terem a MESMA altura */
+    justify-content: center;
+    gap: 30px;                /* espaço entre um card e outro */
+    width: 1200px;
+    margin-top: 40px;
+}
+
+.cardapio-card {
+  
+    position: relative;  
+    flex: 1 1 0;         
+    min-width: 0;        
+    background-color: #fceaeb;
+    border-radius: 48px;
+    padding: 22px 22px 30px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+    border: none;
+}
+
+.cardapio-header {
+    background-color: #f7e9ee; /* Cor do banner para unificar */
+    padding: 25px 20px;
+    margin-bottom: 25px;
+    text-align: center; /* Centraliza o título */
+    border-radius: 20px; /* Remove a "bolha" interna */
+}
+
+.cardapio-header h3 {
+    color: #2f1b15;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center; /* <-- O vilão da história está aqui */
+    margin: 0;
+    font-weight: 600;
+}
+
+.cardapio-lista {
+    list-style: none;       /* remove a bolinha padrão de lista */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;             
+    padding: 0 30px;
+    font-size: 28px;
+}
+
+.cardapio-lista li {
+    position: relative;
+    padding-left: 0px; /* Garante o respiro entre o marcador e o texto */
+    font-size: 16px;
+    color: #1A1A1A;
+    line-height: 40px; /* Melhora a legibilidade vertical */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09); /* Linha divisória fantasma, quase invisível */
+}
+
+/*Cardápio dos preços*/
+.cardapio-precos {
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px;
+    padding: 0 30px;
+}
+
+.linha-preco {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adicione esta linha para empurrar o preço pra direita */
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09); /* Mantemos apenas a linha deitada para guiar o olho */
+}
+
+.linha-preco:last-child {
+    border-bottom: none;
+}
+
+/* Adicione a classe .numero para controlar a primeira coluna */
+.linha-preco .numero {
+    flex: 1; /* Ocupa 1 parte do espaço */
+}
+
+.linha-preco .tamanho {
+    flex: 2; /* Ocupa 2 partes do espaço (o dobro da primeira) */
+    color: #2a1710;
+    font-size: 16px;
+    padding-left: 0; 
+    border-left: none;
+}
+
+.linha-preco .valor {
+    flex: 2; /* Ocupa 2 partes do espaço, garantindo alinhamento idêntico ao tamanho */
+    font-weight: 700;
+    color: #2f1b15; 
+    font-size: 16px;
+    padding-left: 0; 
+    border-left: none;
+}
+
+html.dark .cardapio-card {background-color: #2a1b1e;border-color: #3d282c;box-shadow: none;}
+html.dark .cardapio-header{background-color: #392327; border-color: #3d282c; }
+html.dark .cardapio-header h3{color: rgb(186, 173, 173);}
+html.dark .cardapio-icone {background-color: #302024; border-color: #3d282c;}
+html.dark .cardapio-lista li {color: #f0e6e2;}
+html.dark .linha-preco {border-bottom-color: #4a3236;}
+html.dark .linha-preco .tamanho {color: #f0e6e2;}
+html.dark .linha-preco .valor {border-left-color: #4a3236; color:#f0e6e2;}
+ 
+.hamburger {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+/* MENU */
+    .Menu {
+         padding: 15px 20px;
+    }
+
+    .cupcake {
+        height: 65px;
+    }
+
+    .nav {
+        display: none;              /* esconde os links; hamburger assume */
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav a {
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+        font-size: 18px;
+    }
+
+    .nav a:hover {
+          background-color: rgba(0, 0, 0, 0.05);   /* fundo suave cinza-claro */
+          border-radius: 10px;
+    }
+
+    .pedido {
+        display: none;
+    }
+  
+    .hamburger {
+        display: block;     /* mostra só no mobile */
+        font-size: 28px;
+        cursor: pointer;
+        justify-content: space-between;
+    }
+
+    .Menu.ativo {
+        position: relative; 
+        flex-direction: column;
+        align-items: stretch;
+        background: linear-gradient(135deg, #fdeef5 0%, #fff8fa 100%);
+        border-radius: 24px;
+        padding: 20px 25px 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+        z-index: 10;
+        transition: all 0.3s ease; 
+    }
+
+    .Menu.ativo .cupcake {
+        height: 65px; 
+    }
+
+    .Menu.ativo .logo {
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+    .Menu.ativo .toggle-tema {
+        position: absolute; /* Substitua fixed por absolute */
+        top: 30px;          /* Alinha horizontalmente com o hamburger */
+        right: 70px;        /* Afasta para não encavalar com o ícone de fechar */
+        z-index: 11;
+        margin: 0;
+    }
+
+    .Menu.ativo .hamburger {
+        position: absolute;
+        top: 24px;
+        right: 25px;
+        z-index: 11;
+    }
+
+    .Menu.ativo .nav {
+        order: 2;
+        display: flex;
+        text-align: center;
+    }
+
+    /* O botão "fazer pedido" vira a faixa grande de baixo, como no print */
+    .Menu.ativo .pedido {
+        display: flex; /* <-- Adicione esta linha para forçar a exibição */
+        margin: 20px 0 0;
+        flex-direction: column;
+        width: 100%;
+        order: 3; /* Mantendo a ordem que arrumamos antes */
+    }
+
+    .Menu.ativo .botao2 {
+        width: 100%;
+        justify-content: center;
+        padding: 18px;
+        font-size: 1.1rem;
+        border-radius: 50px;
+    }
+
+    .Menu.ativo {
+        background-color: #2a1710;
+    }
+
+    html.dark .Menu.ativo {
+    background: rgba(37, 24, 27, 0.95);
+}
+
+    /* BANNER PRINCIPAL */
+    main {
+        padding: 30px 25px 50px;
+        min-height: auto;
+    }
+
+    .conteudo-principal {
+        flex-direction: column;     /* empilha texto e imagem */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .texto-principal,
+    h5, h2, p {
+        text-align: center;
+    }
+
+    p {
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    .botoes {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .imagem-principal img {
+        width: 90%;
+    }
+
+    /* CARDS DE VANTAGENS */
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .producao {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .diferencial {
+        font-size: 32px;
+    }
+
+    /* ENTREGA */
+    .entrega-container {
+        padding: 15px 20px;
+    }
+
+    .entrega-texto {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* GALERIA DE BOLOS */
+    .galeria-bolos {
+        gap: 15px;
+    }
+
+    .imagem-bolo {
+        width: 45vw;
+        max-width: 300px;
+    }
+
+    /* TABELA DE PREÇOS */
+    .tabelas-linha {
+        flex-direction: column;     /* cards um embaixo do outro */
+        width: 100%;
+        gap: 20px;
+    }
+
+    .cardapio-card {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+}
+
+/* ---------- CELULARES PEQUENOS (até 480px) ---------- */
+@media (max-width: 480px) {
+
+    h2 {
+        font-size: 26px;
+    }
+
+    h5 {
+        font-size: 13px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .botoes {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .botoes button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .imagem-principal img {
+        width: 100%;
+    }
+
+    .diferencial {
+        font-size: 26px;
+    }
+
+    .producao {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .producao .icone {
+        margin: 0 auto 10px;
+    }
+
+    .imagem-bolo {
+        width: 80vw;
+        max-width: 320px;
+    }
+
+    .cardapio-header h3 {
+        font-size: 20px;
+    }
+
+    .cardapio-lista li,
+    .linha-preco .tamanho,
+    .linha-preco .valor {
+        font-size: 14px;
+    }
+}
