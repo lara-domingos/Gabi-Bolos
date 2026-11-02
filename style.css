@@ -811,3 +811,253 @@ html.dark .linha-preco .valor {border-left-color: #4a3236; color:#f0e6e2;}
         font-size: 14px;
     }
 }
+
+/* =========================================
+   CAROUSEL DE BANNERS (Início)
+   ========================================= */
+#inicio {
+    width: 100%;
+}
+
+.principal {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.banner-slide {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    min-height: 520px;
+    padding: 40px 90px 70px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #fdf4f8 0%, #f7e9ee 55%, #f1d3dc 100%);
+    box-shadow: 0 15px 35px rgba(98, 41, 45, 0.15);
+}
+
+.banner-slide .imagem-principal img {
+    max-height: 420px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.botao-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #a73c45;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.botao-link:hover {
+    background-color: #d28a9a;
+    color: white;
+}
+
+/* setas e bolinhas visíveis sobre o fundo rosado */
+.principal .carousel-control-prev-icon,
+.principal .carousel-control-next-icon {
+    filter: invert(1) grayscale(1);
+}
+
+.principal .carousel-indicators [data-bs-target] {
+    background-color: #843518;
+}
+
+html.dark .banner-slide {
+    background: linear-gradient(135deg, #291d20 0%, #2a1b1e 55%, #43373a 100%);
+    box-shadow: none;
+}
+
+html.dark .principal .carousel-control-prev-icon,
+html.dark .principal .carousel-control-next-icon {
+    filter: none;
+}
+
+html.dark .principal .carousel-indicators [data-bs-target] {
+    background-color: #e6dcd8;
+}
+
+html.dark .banner-slide .texto-principal p {
+    color: rgb(186, 173, 173);
+}
+
+@media (max-width: 768px) {
+    .banner-slide {
+        flex-direction: column;
+        gap: 25px;
+        min-height: auto;
+        padding: 30px 25px 60px;
+        text-align: center;
+    }
+
+    .banner-slide .imagem-principal img {
+        max-height: 260px;
+    }
+}
+
+
+/* Banner ocupando toda a área do main (sem moldura) */
+main.main-inicio {
+    padding: 0;
+    min-height: 0;
+    display: block;
+}
+
+.main-inicio .principal {
+    max-width: none;
+    margin: 0;
+}
+
+.main-inicio .banner-slide {
+    min-height: 90vh;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 40px 110px 70px;
+}
+
+.main-inicio .carousel-control-prev,
+.main-inicio .carousel-control-next {
+    width: 80px;
+}
+
+@media (max-width: 768px) {
+    .main-inicio .banner-slide {
+        min-height: 80vh;
+        padding: 30px 45px 60px;
+    }
+
+    .main-inicio .carousel-control-prev,
+    .main-inicio .carousel-control-next {
+        width: 40px;
+    }
+}
+
+
+/* Banners em imagem, com botões dentro */
+.main-inicio .banner-slide.banner-imagem {
+    position: relative;
+    display: block;
+    min-height: 0;
+    padding: 0;
+    background: none;
+}
+
+.banner-imagem > img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.banner-imagem .botoes {
+    position: absolute;
+    left: 50%;
+    bottom: 60px;
+    transform: translateX(-50%);
+    margin: 0;
+    width: auto;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* setas e bolinhas claras para ler sobre as imagens */
+.main-inicio .principal .carousel-control-prev-icon,
+.main-inicio .principal .carousel-control-next-icon,
+html.dark .main-inicio .principal .carousel-control-prev-icon,
+html.dark .main-inicio .principal .carousel-control-next-icon {
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.7));
+}
+
+.main-inicio .principal .carousel-indicators [data-bs-target],
+html.dark .main-inicio .principal .carousel-indicators [data-bs-target] {
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .main-inicio .banner-slide.banner-imagem {
+        padding: 0;
+        min-height: 0;
+    }
+
+    .banner-imagem .botoes {
+        bottom: 34px;
+        gap: 8px;
+    }
+
+    .banner-imagem .botao-link {
+        padding: 9px 18px;
+        font-size: 0.85rem;
+    }
+}
+
+
+/* Banners um pouco menores, centralizados */
+main.main-inicio {
+    padding: 25px 0;
+}
+
+.main-inicio .banner-slide.banner-imagem {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.banner-imagem > img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 72vh;
+}
+
+
+/* Largura total de novo, só um pouco mais baixo */
+main.main-inicio {
+    padding: 0;
+}
+
+.main-inicio .banner-slide.banner-imagem {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
+}
+
+.banner-imagem > img {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    max-height: 80vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* Altura fixa para o banner caber na tela (botões sempre visíveis) */
+.main-inicio .banner-imagem > img {
+    width: 100%;
+    height: 78vh;
+    min-height: 420px;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 768px) {
+    /* no celular mostra a imagem inteira, sem cortar o texto da arte */
+    .main-inicio .banner-imagem > img {
+        height: auto;
+        min-height: 0;
+    }
+}
