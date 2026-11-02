@@ -1061,3 +1061,125 @@ main.main-inicio {
         min-height: 0;
     }
 }
+
+
+/* Legendas dentro das imagens dos banners */
+.banner-legenda {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(44%, 600px);
+    z-index: 2;
+    text-align: left;
+}
+
+.legenda-esquerda {
+    left: 9%;
+}
+
+.legenda-direita {
+    right: 9%;
+}
+
+.banner-legenda h5 {
+    font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+    margin-bottom: 10px;
+}
+
+.banner-legenda h2,
+html.dark .banner-legenda h2 {
+    font-size: clamp(26px, 3.4vw, 54px);
+    color: #2f1b15;
+    margin-bottom: 15px;
+}
+
+.banner-legenda h2 span,
+html.dark .banner-legenda h2 span {
+    color: #a73c45;
+}
+
+.banner-legenda p,
+html.dark .banner-legenda p {
+    font-size: clamp(14px, 1.35vw, 22px);
+    line-height: 1.5;
+    color: #1A1A1A;
+    max-width: 100%;
+}
+
+/* botões agora ficam junto do texto da legenda */
+.banner-legenda .botoes {
+    position: static;
+    transform: none;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    /* no celular a legenda vai logo abaixo da imagem, para não ficar apertada */
+    .banner-legenda,
+    .legenda-esquerda,
+    .legenda-direita {
+        position: static;
+        transform: none;
+        width: auto;
+        padding: 20px 45px 55px;
+        text-align: center;
+        background: #fdf4f8;
+    }
+
+    html.dark .banner-legenda {
+        background: #2a1b1e;
+    }
+
+    html.dark .banner-legenda h2 {
+        color: #f0e6e2;
+    }
+
+    html.dark .banner-legenda p {
+        color: rgb(186, 173, 173);
+    }
+
+    .banner-legenda .botoes {
+        justify-content: center;
+    }
+}
+
+
+/* Indicadores: traços pretos, sem sombra/borda; o ativo vai para cinza quase preto */
+.main-inicio .principal .carousel-indicators [data-bs-target],
+html.dark .main-inicio .principal .carousel-indicators [data-bs-target] {
+    background-color: #000;
+    box-shadow: none;
+    opacity: 1;
+    transition: background-color 0.6s ease;
+}
+
+.main-inicio .principal .carousel-indicators [data-bs-target].active,
+html.dark .main-inicio .principal .carousel-indicators [data-bs-target].active {
+    background-color: #4a4a4a;
+}
+
+
+/* Setas marrons */
+.main-inicio .principal .carousel-control-prev-icon,
+html.dark .main-inicio .principal .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%234a2a1f'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
+    filter: none;
+}
+
+.main-inicio .principal .carousel-control-next-icon,
+html.dark .main-inicio .principal .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%234a2a1f'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
+    filter: none;
+}
+
+/* Indicadores marrons: o do banner atual fica bem mais escuro */
+.main-inicio .principal .carousel-indicators [data-bs-target],
+html.dark .main-inicio .principal .carousel-indicators [data-bs-target] {
+    background-color: #b98b78;
+}
+
+.main-inicio .principal .carousel-indicators [data-bs-target].active,
+html.dark .main-inicio .principal .carousel-indicators [data-bs-target].active {
+    background-color: #4a2a1f;
+}
