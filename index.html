@@ -18,15 +18,15 @@
 <body>
     <header class="Menu">
         <div class="logo">
-            <img src="/Imagens/logo_transparente.png copia.png" alt="Gabi Bolos" class="cupcake logo-clara">
-            <img src="/Imagens/gabi_bolos_fundo_transparente.png copia.png" alt="Gabi Bolos" class="cupcake logo-escura">
+            <img src="Imagens/logo_transparente.png copia.png" alt="Gabi Bolos" class="cupcake logo-clara">
+            <img src="Imagens/gabi_bolos_fundo_transparente.png copia.png" alt="Gabi Bolos" class="cupcake logo-escura">
         </div>
 
         <nav class="nav">
             <a href="#inicio">Início</a>
             <a href="cardapio.html">Cardápio</a>
             <a href="bolos.html">Bolos</a>
-            <a href="#">Contato</a>          
+            <a href="#contato">Contato</a>
         </nav>
 
            <div class="pedido">
@@ -34,9 +34,9 @@
                 <i class="ph ph-sun icone-sol"></i>
                 <i class="ph ph-moon icone-lua"></i>
             </button>
-            <button class="botao2">Fazer pedido</button>
+            <a class="botao2" href="https://wa.me/5519994689917" target="_blank" rel="noopener noreferrer">Fazer pedido</a>
         </div> 
-        <div class="hamburger">☰</div>  
+        <div class="hamburger" role="button" tabindex="0" aria-label="Abrir menu">☰</div>  
 
     </header>
 
@@ -126,7 +126,7 @@
         <div class="cards-container">
             <article class="producao">
                 <div class="icone">
-                    <img src="/Imagens/mistura.png">
+                    <img src="Imagens/mistura.png" alt="">
                 </div>
 
                 <div class="texto">
@@ -137,7 +137,7 @@
 
             <article class="producao">
                 <div class="icone">
-                    <img src="/Imagens/morango.png">
+                    <img src="Imagens/morango.png" alt="">
                 </div>
                 <div class="texto">
                     <h3>Receitas exclusivas</h3>
@@ -149,7 +149,7 @@
 
             <article class="producao">
                 <div class="icone">
-                    <img src="/Imagens/bolinho.png">
+                    <img src="Imagens/bolinho.png" alt="">
                 </div>
                 <div class="texto">
                     <h3>Bolos personalizados</h3>
@@ -171,29 +171,45 @@
         </div>
     </section>
 
-    <script>
-        const btnTema = document.getElementById('theme-toggle');
 
-        btnTema.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-        });
-
-    </script>
-
-    <h2 class="diferencial">Nossos Bolos</h2>
-    <section id="Sobremesa" class="galeria-bolos">
+    <section aria-labelledby="titulo-bolos">
+        <h2 class="diferencial" id="titulo-bolos">Nossos Bolos</h2>
+        <div id="Sobremesa" class="galeria-bolos">
         <article class="bolos-card">
-            <img src="/Imagens/preto.jpeg" class="imagem-bolo" alt="Bolo">
+            <img src="Imagens/preto.jpeg" class="imagem-bolo" loading="lazy" alt="Bolo">
         </article>
         <article class="bolos-card">
-            <img src="/Imagens/branco.jpeg" class="imagem-bolo" alt="Bolo">
+            <img src="Imagens/branco.jpeg" class="imagem-bolo" loading="lazy" alt="Bolo">
         </article>
         <article class="bolos-card">
-            <img src="/Imagens/marrom bombom.jpeg" class="imagem-bolo" alt="Bolo">
+            <img src="Imagens/marrom bombom.jpeg" class="imagem-bolo" loading="lazy" alt="Bolo">
         </article>
+        </div>
     </section>
 
+    <footer class="rodape" id="contato">
+        <h3>Gabi Bolos</h3>
+        <p>Bolos e doces feitos à mão, com dedicação e muito carinho.</p>
+        <a class="botao-link" href="https://wa.me/5519994689917" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> Fale pelo WhatsApp</a>
+        <small>&copy; 2026 Gabi Bolos</small>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Tema claro/escuro: lembra a escolha da pessoa
+        const btnTema = document.getElementById('theme-toggle');
+
+        try {
+            if (localStorage.getItem('tema') === 'escuro') {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) { }
+
+        btnTema.addEventListener('click', () => {
+            const escuro = document.documentElement.classList.toggle('dark');
+            try { localStorage.setItem('tema', escuro ? 'escuro' : 'claro'); } catch (e) { }
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 
